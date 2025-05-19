@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html, body{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.paper-folding{
+  position: absolute;
+  z-index: 999;
+  height: 40%;
+  top: -360px;
+  left: -360px;
+  filter: drop-shadow(5px 5px 120px #303030);
+}
+
+.title-container{
+  position: absolute;
+  text-align: center;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  top: 30%;
+}
+
+.title-text{
+  font-size: 8em;
+  color: white;
+  z-index: -1;
+}
+
+/* Make the burger-container cover the full screen */
+#burger-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;    /* vertical center */
+  justify-content: center; /* horizontal center */
+  overflow: hidden;
+  background: #ff6344;
+}
+
+/* Let the container fill the screen */
+#burger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make the SVG scale properly */
+#burger svg {
+  /* width: 80vmin; */
+  height: 100vmin;
+  object-fit: contain;
+  object-position: center;
+}
+
+.model-wrapper {
+  display: none;
+  position: relative;
+  height: auto; /* enough to scroll through sections */
+  width: 100%;
+  overflow: hidden;
+}
+
+#model-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#model-container canvas{
+  opacity: 0.8;
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+}
+
+@media only screen and (max-width:700px){
+
+  .title-container {
+    top: 50%;
+  }
+
+  .title-text {
+    font-size: 4em;
+  }
+
+  #burger svg {
+    height: 141vmin;
+  }
+
+  .paper-folding{
+    height: 30%;
+  }
+}
